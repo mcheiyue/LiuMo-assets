@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Data
+output/
+*.db
+*.sqlite
+data/cleaned/
+data/progress.json
