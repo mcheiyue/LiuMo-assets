@@ -8,19 +8,17 @@ __pycache__/
 venv/
 .venv/
 
-# Intermediate Data Processed (Ignored to keep repo clean)
-data/curated/
-data/cleaned/
-
-# Output artifacts
+# Build Artifacts
 output/
 dist/
 *.db
 *.db.gz
 liumo_full.db
 
-# Large raw files (split versions are committed)
-assets/final/full/tang_shi.json
+# Large raw files / Intermediate
+assets/raw/
+assets/cleaned/
+# assets/final/ is committed (source of truth)
 
 # Reports & Logs
 *.log

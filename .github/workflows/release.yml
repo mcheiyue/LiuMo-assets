@@ -25,18 +25,18 @@ jobs:
           
       - name: Build Full Database
         run: |
-          mkdir -p dist
-          python src/builder.py --input assets/final/full --output dist/liumo_v8_full.db
-          gzip -c dist/liumo_v8_full.db > dist/liumo_v8_full.db.gz
+          mkdir -p output
+          python src/builder.py --type full --output_dir output
+          gzip -c output/full.db > output/liumo_v8_full.db.gz
           
       - name: Build Lite Database
         run: |
-          python src/builder.py --input assets/final/lite --output dist/liumo_v8_lite.db
-          gzip -c dist/liumo_v8_lite.db > dist/liumo_v8_lite.db.gz
+          python src/builder.py --type lite --output_dir output
+          gzip -c output/core.db > output/liumo_v8_lite.db.gz
           
       - name: Get current date
         id: date
-        run: echo "date=$(date +'%Y.%m.%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
         
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -44,7 +44,7 @@ jobs:
           tag_name: v8-data-${{ steps.date.outputs.date }}
           name: V8 Data Update ${{ steps.date.outputs.date }}
           files: |
-            dist/liumo_v8_full.db.gz
-            dist/liumo_v8_lite.db.gz
+            output/liumo_v8_full.db.gz
+            output/liumo_v8_lite.db.gz
           draft: false
           prerelease: false
