@@ -2,158 +2,167 @@ import sqlite3
 import json
 import os
 import argparse
-import hashlib
+from pathlib import Path
 
-# 配置
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, "data", "cleaned") # 修改为读取 cleaned 目录
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-DB_NAME_LITE = "core.db"
-DB_NAME_FULL = "liumo_full.db"
+# === 配置 ===
+DB_PATH = "dist/liumo_v8.db"
+DEFAULT_INPUT = "assets/final/full"
 
-SCHEMA_V7_1 = """
-CREATE TABLE IF NOT EXISTS poetry (
-    id TEXT PRIMARY KEY,
-    title TEXT NOT NULL,
-    author TEXT NOT NULL,
-    dynasty TEXT NOT NULL,
-    
-    -- [兼容性保留字段]
-    content TEXT,
-    type TEXT,
-    
-    -- [V7.0 新增字段]
-    layout_strategy TEXT DEFAULT 'GRID_STANDARD',
-    content_json TEXT,
-    display_content TEXT,
-    tags TEXT,
-    search_content TEXT
-);
+def create_connection(db_file):
+    """创建数据库连接"""
+    conn = None
+    try:
+        # 确保目录存在
+        os.makedirs(os.path.dirname(db_file), exist_ok=True)
+        conn = sqlite3.connect(db_file)
+        return conn
+    except Exception as e:
+        print(f"Error connecting to database: {e}")
+    return None
 
-CREATE TABLE IF NOT EXISTS metadata (
-    key TEXT PRIMARY KEY,
-    value TEXT
-);
-"""
-
-def get_db_path(db_type):
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    if db_type == 'lite':
-        return os.path.join(OUTPUT_DIR, DB_NAME_LITE)
-    else:
-        return os.path.join(OUTPUT_DIR, DB_NAME_FULL)
-
-def init_db(db_path):
-    if os.path.exists(db_path):
-        os.remove(db_path)
-    
-    conn = sqlite3.connect(db_path)
+def setup_schema(conn):
+    """初始化数据库表结构 (V8.0 Schema) - 重置数据库"""
     cursor = conn.cursor()
-    cursor.executescript(SCHEMA_V7_1)
     
-    # 创建索引
-    cursor.execute("CREATE INDEX IF NOT EXISTS idx_author ON poetry(author);")
-    cursor.execute("CREATE INDEX IF NOT EXISTS idx_dynasty ON poetry(dynasty);")
-    cursor.execute("CREATE INDEX IF NOT EXISTS idx_title ON poetry(title);")
-    cursor.execute("CREATE INDEX IF NOT EXISTS idx_tags ON poetry(tags);")
+    print("Setting up V8.0 Schema...")
+    cursor.execute("DROP TABLE IF EXISTS poetry")
+    cursor.execute("DROP TABLE IF EXISTS poetry_fts")
     
+    # 1. 主数据表
+    cursor.execute("""
+    CREATE TABLE poetry (
+        id TEXT PRIMARY KEY,
+        title TEXT,
+        author TEXT,
+        dynasty TEXT,
+        content_json TEXT,
+        layout_strategy TEXT,
+        tags TEXT,
+        source TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    """)
+    
+    # 2. FTS5 全文索引表
+    cursor.execute("""
+    CREATE VIRTUAL TABLE poetry_fts USING fts5(
+        id UNINDEXED,
+        title,
+        author,
+        search_text,
+        tokenize='unicode61 remove_diacritics 0'
+    );
+    """)
     conn.commit()
-    return conn
 
-def generate_id(item):
-    """生成唯一ID: hash(title+author)"""
-    # 优先使用 item 里已有的 id (如果 ai_cleaner 生成了)
-    if item.get('id'): return item['id']
-    raw = f"{item.get('title','')}_{item.get('author','')}"
-    return hashlib.md5(raw.encode('utf-8')).hexdigest()
-
-def process_lite(conn):
-    print("构建 Lite 数据库...")
-    cursor = conn.cursor()
-    datasets = ["k12", "tang_300", "song_300"]
-    
-    total_count = 0
-    seen_ids = set()
-    
-    for ds in datasets:
-        # 清洗后的目录结构是 data/cleaned/[ds]/[file.json]，没有 raw 子目录
-        raw_dir = os.path.join(DATA_DIR, ds)
-        if not os.path.exists(raw_dir):
-            print(f"警告: 数据集目录不存在 {raw_dir}")
-            continue
-            
-        files = [f for f in os.listdir(raw_dir) if f.endswith(".json")]
-        print(f"  处理 {ds}: {len(files)} 个文件")
+def import_file(conn, file_path):
+    print(f"Processing {file_path}...")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"Error reading {file_path}: {e}")
+        return
         
-        for f in files:
-            path = os.path.join(raw_dir, f)
-            with open(path, 'r', encoding='utf-8') as file:
-                item = json.load(file)
-                
-            pid = generate_id(item)
-            if pid in seen_ids:
-                continue # 去重
-            seen_ids.add(pid)
-            
-            # 字段映射与默认值填充
-            title = item.get("title", "")
-            author = item.get("author", "")
-            dynasty = item.get("dynasty", "Unknown")
-            content = item.get("content", "")
-            
-            # 优先使用已有的 V7.1 字段
-            layout_strategy = item.get("layout_strategy", "GRID_STANDARD")
-            content_json = item.get("content_json") # 可能为 None
-            display_content = item.get("display_content", content)
-            
-            # 标签处理
-            tags_list = item.get("tags", [])
-            if item.get("type"):
-                tags_list.append(item.get("type"))
-            tags_str = ",".join(list(set(tags_list))) # 去重
-            
-            # 搜索内容: 标题 + 作者 + 内容 + 标签
-            search_content = f"{title} {author} {content} {tags_str}"
-            
-            cursor.execute("""
-                INSERT INTO poetry (
-                    id, title, author, dynasty, content, type,
-                    layout_strategy, content_json, display_content, tags, search_content
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                pid, title, author, dynasty, content, item.get("type", ""),
-                layout_strategy,
-                content_json,
-                display_content,
-                tags_str,
-                search_content
-            ))
-            
-            total_count += 1
-            
-    # 写入元数据
-    cursor.execute("INSERT OR REPLACE INTO metadata VALUES ('version', 'v1.7.0-lite')")
-    cursor.execute("INSERT OR REPLACE INTO metadata VALUES ('build_date', '2026-01-29')")
-    cursor.execute("INSERT OR REPLACE INTO metadata VALUES ('record_count', ?)", (str(total_count),))
+    cursor = conn.cursor()
+    batch_size = 5000
+    batch_poetry = []
+    batch_fts = []
     
-    conn.commit()
-    print(f"Lite DB build complete. Total records: {total_count}")
+    for item in data:
+        tags_str = json.dumps(item.get('tags', []), ensure_ascii=False)
+        
+        # Ensure content_json is a string
+        content_json_val = item.get('content_json', '{}')
+        if not isinstance(content_json_val, str):
+            content_json_val = json.dumps(content_json_val, ensure_ascii=False)
+
+        p_record = (
+            item['id'],
+            item['title'],
+            item['author'],
+            item['dynasty'],
+            content_json_val,
+            item['layout_strategy'],
+            tags_str,
+            item.get('source', '')
+        )
+        
+        # search_text might need to be constructed if missing, but V8 pipeline should have it.
+        # Fallback just in case, though schema says it should be there.
+        search_text = item.get('search_text', '')
+        if not search_text:
+            # Simple fallback construction
+            content_plain = item.get('content', '')
+            search_text = f"{item['title']} {item['author']} {content_plain}" 
+
+        fts_record = (
+            item['id'],
+            item['title'],
+            item['author'],
+            search_text
+        )
+        
+        batch_poetry.append(p_record)
+        batch_fts.append(fts_record)
+        
+        if len(batch_poetry) >= batch_size:
+            cursor.executemany("INSERT INTO poetry (id, title, author, dynasty, content_json, layout_strategy, tags, source) VALUES (?,?,?,?,?,?,?,?)", batch_poetry)
+            cursor.executemany("INSERT INTO poetry_fts (id, title, author, search_text) VALUES (?,?,?,?)", batch_fts)
+            conn.commit()
+            batch_poetry = []
+            batch_fts = []
+            print(f"  Processed chunk of {batch_size}...")
+            
+    if batch_poetry:
+        cursor.executemany("INSERT INTO poetry (id, title, author, dynasty, content_json, layout_strategy, tags, source) VALUES (?,?,?,?,?,?,?,?)", batch_poetry)
+        cursor.executemany("INSERT INTO poetry_fts (id, title, author, search_text) VALUES (?,?,?,?)", batch_fts)
+        conn.commit()
+    
+    print(f"Imported {len(data)} records from {os.path.basename(file_path)}")
+
+def optimize_db(conn):
+    print("Optimizing database...")
+    conn.execute("VACUUM")
+    
+    cursor = conn.cursor()
+    cursor.execute("SELECT count(*) FROM poetry")
+    count = cursor.fetchone()[0]
+    print(f"Total records in poetry: {count}")
+    
+    cursor.execute("SELECT count(*) FROM poetry_fts")
+    count_fts = cursor.fetchone()[0]
+    print(f"Total records in poetry_fts: {count_fts}")
 
 def main():
-    parser = argparse.ArgumentParser(description="构建流墨数据库")
-    parser.add_argument("--type", choices=['lite', 'full'], required=True, help="构建类型")
+    parser = argparse.ArgumentParser(description="Build LiuMo V8.0 Database")
+    parser.add_argument("--input", default=DEFAULT_INPUT, help="Input JSON file or directory")
+    parser.add_argument("--output", default=DB_PATH, help="Output SQLite DB path")
     args = parser.parse_args()
     
-    db_path = get_db_path(args.type)
-    conn = init_db(db_path)
+    print(f"Building database to {args.output} from {args.input}...")
     
-    if args.type == 'lite':
-        process_lite(conn)
-    else:
-        print("Full build not implemented yet.")
+    conn = create_connection(args.output)
+    if not conn:
+        return
         
+    setup_schema(conn)
+    
+    input_path = Path(args.input)
+    if input_path.is_dir():
+        files = sorted(input_path.glob("*.json"))
+        if not files:
+            print(f"No JSON files found in {input_path}")
+        for f in files:
+            import_file(conn, str(f))
+    elif input_path.is_file():
+        import_file(conn, str(input_path))
+    else:
+        print(f"Invalid input: {args.input}")
+        
+    optimize_db(conn)
     conn.close()
-    print(f"数据库已保存至: {db_path}")
+    print("Done.")
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

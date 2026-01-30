@@ -1,0 +1,17 @@
+{
+  "title": "春怨",
+  "author": "刘方平",
+  "dynasty": "唐",
+  "content": "纱窗日落渐黄昏，金屋无人见泪痕。\n寂寞空庭春欲晚，梨花满地不开门。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "春怨",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"纱窗日落渐黄昏，金屋无人见泪痕。\", \"寂寞空庭春欲晚，梨花满地不开门。\"]}]}",
+  "display_content": "纱窗日落渐黄昏，金屋无人见泪痕。\n寂寞空庭春欲晚，梨花满地不开门。"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "黄鹤楼送孟浩然之广陵",
+  "author": "李白",
+  "dynasty": "唐",
+  "content": "故人西辞黄鹤楼，烟花三月下扬州。\n孤帆远影碧山尽，唯见长江天际流。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "黄鹤楼送孟浩然之广陵",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"故人西辞黄鹤楼，烟花三月下扬州。\", \"孤帆远影碧山尽，唯见长江天际流。\"]}]}",
+  "display_content": "故人西辞黄鹤楼，烟花三月下扬州。\n孤帆远影碧山尽，唯见长江天际流。"
+}

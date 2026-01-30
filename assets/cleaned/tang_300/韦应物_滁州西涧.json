@@ -1,0 +1,17 @@
+{
+  "title": "滁州西涧",
+  "author": "韦应物",
+  "dynasty": "唐",
+  "content": "独怜幽草涧边生，上有黄鹂深树鸣。\n春潮带雨晚来急，野渡无人舟自横。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "滁州西涧",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"独怜幽草涧边生，上有黄鹂深树鸣。\", \"春潮带雨晚来急，野渡无人舟自横。\"]}]}",
+  "display_content": "独怜幽草涧边生，上有黄鹂深树鸣。\n春潮带雨晚来急，野渡无人舟自横。"
+}

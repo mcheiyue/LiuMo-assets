@@ -1,0 +1,17 @@
+{
+  "title": "近试上张籍水部 / 近试上张水部 / 闺意献张水部",
+  "author": "朱庆馀",
+  "dynasty": "唐",
+  "content": "洞房昨夜停红烛，待晓堂前拜舅姑。\n妆罢低声问夫婿，画眉深浅入时无。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "闺意献张水部",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"洞房昨夜停红烛，待晓堂前拜舅姑。\", \"妆罢低声问夫婿，画眉深浅入时无。\"]}]}",
+  "display_content": "洞房昨夜停红烛，待晓堂前拜舅姑。\n妆罢低声问夫婿，画眉深浅入时无。"
+}

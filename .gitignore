@@ -14,7 +14,13 @@ data/cleaned/
 
 # Output artifacts
 output/
+dist/
+*.db
+*.db.gz
 liumo_full.db
+
+# Large raw files (split versions are committed)
+assets/final/full/tang_shi.json
 
 # Reports & Logs
 *.log

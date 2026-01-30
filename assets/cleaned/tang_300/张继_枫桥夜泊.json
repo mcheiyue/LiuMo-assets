@@ -1,0 +1,17 @@
+{
+  "title": "枫桥夜泊",
+  "author": "张继",
+  "dynasty": "唐",
+  "content": "月落乌啼霜满天，江枫渔父对愁眠。\n姑苏城外寒山寺，夜半钟声到客船。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "枫桥夜泊",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"月落乌啼霜满天，江枫渔父对愁眠。\", \"姑苏城外寒山寺，夜半钟声到客船。\"]}]}",
+  "display_content": "月落乌啼霜满天，江枫渔父对愁眠。\n姑苏城外寒山寺，夜半钟声到客船。"
+}

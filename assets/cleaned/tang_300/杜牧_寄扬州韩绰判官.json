@@ -1,0 +1,17 @@
+{
+  "title": "寄扬州韩绰判官",
+  "author": "杜牧",
+  "dynasty": "唐",
+  "content": "青山隐隐水迢迢，秋尽江南草木凋。\n二十四桥明月夜，玉人何处教吹箫。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "寄扬州韩绰判官",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"青山隐隐水迢迢，秋尽江南草木凋。\", \"二十四桥明月夜，玉人何处教吹箫。\"]}]}",
+  "display_content": "青山隐隐水迢迢，秋尽江南草木凋。\n二十四桥明月夜，玉人何处教吹箫。"
+}

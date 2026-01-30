@@ -1,0 +1,17 @@
+{
+  "title": "四时田园杂兴",
+  "author": "范成大",
+  "dynasty": "宋",
+  "content": "柳花深巷午鸡声，桑叶尖新绿未成。\n坐睡觉来无一事，满窗晴日看蚕生。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "四时田园杂兴六十首 春日田园杂兴十二绝 其一",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"柳花深巷午鸡声，桑叶尖新绿未成。\", \"坐睡觉来无一事，满窗晴日看蚕生。\"]}]}",
+  "display_content": "柳花深巷午鸡声，桑叶尖新绿未成。\n坐睡觉来无一事，满窗晴日看蚕生。"
+}

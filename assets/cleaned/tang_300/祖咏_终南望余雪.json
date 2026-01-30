@@ -1,0 +1,17 @@
+{
+  "title": "终南望余雪",
+  "author": "祖咏",
+  "dynasty": "唐",
+  "content": "终南阴岭秀，积雪浮云端。\n林表明霁色，城中增暮寒。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "终南望余雪",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"终南阴岭秀，积雪浮云端。\", \"林表明霁色，城中增暮寒。\"]}]}",
+  "display_content": "终南阴岭秀，积雪浮云端。\n林表明霁色，城中增暮寒。"
+}

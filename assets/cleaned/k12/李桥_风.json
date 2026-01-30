@@ -1,0 +1,17 @@
+{
+  "title": "风",
+  "author": "李桥",
+  "dynasty": "唐",
+  "content": "落日生苹末，摇扬徧远林。\n带花疑凤舞，向竹似龙吟。\n月动临秋扇，松清入夜琴。\n若至兰台下，还拂楚王襟。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "风",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"落日生苹末，摇扬徧远林。\", \"带花疑凤舞，向竹似龙吟。\", \"月动临秋扇，松清入夜琴。\", \"若至兰台下，还拂楚王襟。\"]}]}",
+  "display_content": "落日生苹末，摇扬徧远林。\n带花疑凤舞，向竹似龙吟。\n月动临秋扇，松清入夜琴。\n若至兰台下，还拂楚王襟。"
+}

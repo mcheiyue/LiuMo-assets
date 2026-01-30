@@ -1,0 +1,17 @@
+{
+  "title": "夏日绝句",
+  "author": "李清照",
+  "dynasty": "宋",
+  "content": "生当为人杰，死亦作鬼雄。\n至今思项羽，不肯过江东。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "夏日绝句",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"生当为人杰，死亦作鬼雄。\", \"至今思项羽，不肯过江东。\"]}]}",
+  "display_content": "生当为人杰，死亦作鬼雄。\n至今思项羽，不肯过江东。"
+}

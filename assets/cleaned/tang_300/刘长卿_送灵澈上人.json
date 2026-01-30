@@ -1,0 +1,17 @@
+{
+  "title": "送灵澈上人",
+  "author": "刘长卿",
+  "dynasty": "唐",
+  "content": "苍苍竹林寺，杳杳钟声晚。\n荷笠带夕阳，青山独归远。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "送灵澈上人",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"苍苍竹林寺，杳杳钟声晚。\", \"荷笠带夕阳，青山独归远。\"]}]}",
+  "display_content": "苍苍竹林寺，杳杳钟声晚。\n荷笠带夕阳，青山独归远。"
+}

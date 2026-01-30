@@ -1,0 +1,17 @@
+{
+  "title": "村居",
+  "author": "高鼎",
+  "dynasty": "清",
+  "content": "草长莺飞二月天，拂堤杨柳醉春烟。\n儿童散学归来早，忙趁东风放纸鸢。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "村居",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"草长莺飞二月天，拂堤杨柳醉春烟。\", \"儿童散学归来早，忙趁东风放纸鸢。\"]}]}",
+  "display_content": "草长莺飞二月天，拂堤杨柳醉春烟。\n儿童散学归来早，忙趁东风放纸鸢。"
+}

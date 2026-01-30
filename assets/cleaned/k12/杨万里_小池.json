@@ -1,0 +1,17 @@
+{
+  "title": "小池",
+  "author": "杨万里",
+  "dynasty": "宋",
+  "content": "泉眼无声惜细流，树阴照水爱晴柔。\n小荷才露尖尖角，早有蜻蜓立上头。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "小池",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"泉眼无声惜细流，树阴照水爱晴柔。\", \"小荷才露尖尖角，早有蜻蜓立上头。\"]}]}",
+  "display_content": "泉眼无声惜细流，树阴照水爱晴柔。\n小荷才露尖尖角，早有蜻蜓立上头。"
+}

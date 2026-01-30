@@ -1,0 +1,17 @@
+{
+  "title": "江南曲",
+  "author": "李益",
+  "dynasty": "唐",
+  "content": "长乐花枝雨点销，江城日暮好相邀。\n春楼不闭葳蕤锁，绿水回连宛转桥。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "江南曲",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"长乐花枝雨点销，江城日暮好相邀。\", \"春楼不闭葳蕤锁，绿水回连宛转桥。\"]}]}",
+  "display_content": "长乐花枝雨点销，江城日暮好相邀。\n春楼不闭葳蕤锁，绿水回连宛转桥。"
+}

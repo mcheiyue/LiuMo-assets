@@ -1,0 +1,22 @@
+{
+  "total": 396695,
+  "files": {
+    "lite/k12.json": 72,
+    "full/ming.json": 3,
+    "full/tang_shi.json": 271359,
+    "full/pre_tang.json": 854,
+    "full/song_shi.json": 54866,
+    "lite/song_300.json": 262,
+    "full/song_ci.json": 21061,
+    "lite/tang_300.json": 321,
+    "full/yuan_qu.json": 11392,
+    "full/other.json": 641,
+    "full/qing.json": 222,
+    "full/modern.json": 36297
+  },
+  "layout_stats": {
+    "GRID_STANDARD": 303692,
+    "FLOW_VARYING": 32464,
+    "CENTER_ALIGNED": 60539
+  }
+}

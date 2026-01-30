@@ -1,0 +1,17 @@
+{
+  "title": "石灰吟",
+  "author": "于谦",
+  "dynasty": "明",
+  "content": "千锤万凿出深山，烈火焚烧若等闲。\n粉骨碎身浑不怕，要留清白在人间。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "石灰吟",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"千锤万凿出深山，烈火焚烧若等闲。\", \"粉骨碎身浑不怕，要留清白在人间。\"]}]}",
+  "display_content": "千锤万凿出深山，烈火焚烧若等闲。\n粉骨碎身浑不怕，要留清白在人间。"
+}

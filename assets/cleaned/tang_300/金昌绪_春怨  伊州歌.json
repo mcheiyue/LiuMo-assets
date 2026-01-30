@@ -1,0 +1,17 @@
+{
+  "title": "春怨 / 伊州歌",
+  "author": "金昌绪",
+  "dynasty": "唐",
+  "content": "打起黄莺儿，莫教枝上啼。\n啼时惊妾梦，不得到辽西。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "春怨",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"打起黄莺儿，莫教枝上啼。\", \"啼时惊妾梦，不得到辽西。\"]}]}",
+  "display_content": "打起黄莺儿，莫教枝上啼。\n啼时惊妾梦，不得到辽西。"
+}

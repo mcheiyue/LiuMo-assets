@@ -1,0 +1,17 @@
+{
+  "title": "八阵图",
+  "author": "杜甫",
+  "dynasty": "唐",
+  "content": "功盖三分国，名高八阵图。\n江流石不转，遗恨失吞吴。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "八阵图",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"功盖三分国，名高八阵图。\", \"江流石不转，遗恨失吞吴。\"]}]}",
+  "display_content": "功盖三分国，名高八阵图。\n江流石不转，遗恨失吞吴。"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "闺怨",
+  "author": "王昌龄",
+  "dynasty": "唐",
+  "content": "闺中少妇不曾愁，春日凝妆上翠楼。\n忽见陌头杨柳色，悔教夫壻觅封侯。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "闺怨",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"闺中少妇不曾愁，春日凝妆上翠楼。\", \"忽见陌头杨柳色，悔教夫壻觅封侯。\"]}]}",
+  "display_content": "闺中少妇不曾愁，春日凝妆上翠楼。\n忽见陌头杨柳色，悔教夫壻觅封侯。"
+}

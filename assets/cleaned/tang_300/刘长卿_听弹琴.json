@@ -1,0 +1,17 @@
+{
+  "title": "听弹琴",
+  "author": "刘长卿",
+  "dynasty": "唐",
+  "content": "泠泠七丝上，静听松风寒。\n古调虽自爱，今人多不弹。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "听弹琴",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"泠泠七丝上，静听松风寒。\", \"古调虽自爱，今人多不弹。\"]}]}",
+  "display_content": "泠泠七丝上，静听松风寒。\n古调虽自爱，今人多不弹。"
+}

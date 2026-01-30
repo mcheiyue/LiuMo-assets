@@ -1,0 +1,17 @@
+{
+  "title": "玉阶怨",
+  "author": "李白",
+  "dynasty": "唐",
+  "content": "玉阶生白露，夜久侵罗袜。\n却下水晶帘，玲珑望秋月。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "玉阶怨",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"玉阶生白露，夜久侵罗袜。\", \"却下水晶帘，玲珑望秋月。\"]}]}",
+  "display_content": "玉阶生白露，夜久侵罗袜。\n却下水晶帘，玲珑望秋月。"
+}

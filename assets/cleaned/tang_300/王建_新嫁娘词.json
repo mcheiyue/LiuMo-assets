@@ -1,0 +1,17 @@
+{
+  "title": "新嫁娘词",
+  "author": "王建",
+  "dynasty": "唐",
+  "content": "三日入厨下，洗手作羹汤。\n未谙姑食性，先遣小姑尝。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "新嫁娘",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"三日入厨下，洗手作羹汤。\", \"未谙姑食性，先遣小姑尝。\"]}]}",
+  "display_content": "三日入厨下，洗手作羹汤。\n未谙姑食性，先遣小姑尝。"
+}

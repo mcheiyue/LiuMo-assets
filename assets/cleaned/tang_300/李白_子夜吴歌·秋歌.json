@@ -1,0 +1,17 @@
+{
+  "title": "子夜吴歌·秋歌",
+  "author": "李白",
+  "dynasty": "唐",
+  "content": "长安一片月，万户捣衣声。\n秋风吹不尽，总是玉关情。\n何日平胡虏，良人罢远征。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "子夜吴歌 秋歌",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"长安一片月，万户捣衣声。\", \"秋风吹不尽，总是玉关情。\", \"何日平胡虏，良人罢远征。\"]}]}",
+  "display_content": "长安一片月，万户捣衣声。\n秋风吹不尽，总是玉关情。\n何日平胡虏，良人罢远征。"
+}

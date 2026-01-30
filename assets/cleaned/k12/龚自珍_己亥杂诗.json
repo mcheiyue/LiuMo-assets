@@ -1,0 +1,17 @@
+{
+  "title": "己亥杂诗",
+  "author": "龚自珍",
+  "dynasty": "清",
+  "content": "浩荡离愁白日斜，吟鞭东指即天涯。\n落红不是无情物，化作春泥更护花。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "己亥杂诗",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"浩荡离愁白日斜，吟鞭东指即天涯。\", \"落红不是无情物，化作春泥更护花。\"]}]}",
+  "display_content": "浩荡离愁白日斜，吟鞭东指即天涯。\n落红不是无情物，化作春泥更护花。"
+}

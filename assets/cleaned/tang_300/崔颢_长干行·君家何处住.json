@@ -1,0 +1,17 @@
+{
+  "title": "长干行·君家何处住",
+  "author": "崔颢",
+  "dynasty": "唐",
+  "content": "家临九江水，来去九江侧。\n同是长干人，生小不相识。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "长干行·其二",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"家临九江水，来去九江侧。\", \"同是长干人，生小不相识。\"]}]}",
+  "display_content": "家临九江水，来去九江侧。\n同是长干人，生小不相识。"
+}

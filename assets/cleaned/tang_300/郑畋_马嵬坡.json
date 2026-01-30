@@ -1,0 +1,17 @@
+{
+  "title": "马嵬坡",
+  "author": "郑畋",
+  "dynasty": "唐",
+  "content": "[玄]宗回马杨妃死，云雨虽亡日月新。\n终是圣明天子事，景阳宫井又何人。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "马嵬坡",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"[玄]宗回马杨妃死，云雨虽亡日月新。\", \"终是圣明天子事，景阳宫井又何人。\"]}]}",
+  "display_content": "[玄]宗回马杨妃死，云雨虽亡日月新。\n终是圣明天子事，景阳宫井又何人。"
+}

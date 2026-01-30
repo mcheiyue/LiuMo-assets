@@ -1,0 +1,17 @@
+{
+  "title": "竹石",
+  "author": "郑燮",
+  "dynasty": "清",
+  "content": "咬定青山不放松，立根原在破岩中。\n千磨万击还坚劲，任尔东西南北风。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "竹石",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"咬定青山不放松，立根原在破岩中。\", \"千磨万击还坚劲，任尔东西南北风。\"]}]}",
+  "display_content": "咬定青山不放松，立根原在破岩中。\n千磨万击还坚劲，任尔东西南北风。"
+}

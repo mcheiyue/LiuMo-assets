@@ -1,0 +1,17 @@
+{
+  "title": "寻隐者不遇 / 孙革访羊尊师诗",
+  "author": "贾岛",
+  "dynasty": "唐",
+  "content": "松下问童子，言师采药去。\n只在此山中，云深不知处。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "寻隐者不遇",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"松下问童子，言师采药去。\", \"只在此山中，云深不知处。\"]}]}",
+  "display_content": "松下问童子，言师采药去。\n只在此山中，云深不知处。"
+}

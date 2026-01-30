@@ -1,0 +1,17 @@
+{
+  "title": "游子吟",
+  "author": "孟郊",
+  "dynasty": "唐",
+  "content": "慈母手中线，游子身上衣。\n临行密密缝，意恐迟迟归。\n谁言寸草心，报得三春晖。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "游子吟",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"慈母手中线，游子身上衣。\", \"临行密密缝，意恐迟迟归。\", \"谁言寸草心，报得三春晖。\"]}]}",
+  "display_content": "慈母手中线，游子身上衣。\n临行密密缝，意恐迟迟归。\n谁言寸草心，报得三春晖。"
+}

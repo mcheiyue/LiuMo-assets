@@ -1,0 +1,17 @@
+{
+  "title": "小儿垂钓",
+  "author": "胡令能",
+  "dynasty": "唐",
+  "content": "蓬头穉子学垂纶，侧坐莓苔草映身。\n路人借问遥招手，怕得鱼惊不应人。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "小儿垂钓",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"蓬头穉子学垂纶，侧坐莓苔草映身。\", \"路人借问遥招手，怕得鱼惊不应人。\"]}]}",
+  "display_content": "蓬头穉子学垂纶，侧坐莓苔草映身。\n路人借问遥招手，怕得鱼惊不应人。"
+}

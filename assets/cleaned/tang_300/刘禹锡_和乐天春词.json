@@ -1,0 +1,17 @@
+{
+  "title": "和乐天春词",
+  "author": "刘禹锡",
+  "dynasty": "唐",
+  "content": "新妆面面下朱楼，深锁春光一院愁。\n行到中庭数花朵，蜻蜓飞上玉搔头。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "和乐天春词",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"新妆面面下朱楼，深锁春光一院愁。\", \"行到中庭数花朵，蜻蜓飞上玉搔头。\"]}]}",
+  "display_content": "新妆面面下朱楼，深锁春光一院愁。\n行到中庭数花朵，蜻蜓飞上玉搔头。"
+}

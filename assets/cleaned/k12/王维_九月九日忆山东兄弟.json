@@ -1,0 +1,17 @@
+{
+  "title": "九月九日忆山东兄弟",
+  "author": "王维",
+  "dynasty": "唐",
+  "content": "独在异乡为异客，每逢佳节倍思亲。\n遥知兄弟登高处，遍插茱萸少一人。",
+  "type": "乐府",
+  "tags": [
+    "K12",
+    "shi",
+    "乐府"
+  ],
+  "source": "k12",
+  "original_title": "九月九日忆山东兄弟",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"独在异乡为异客，每逢佳节倍思亲。\", \"遥知兄弟登高处，遍插茱萸少一人。\"]}]}",
+  "display_content": "独在异乡为异客，每逢佳节倍思亲。\n遥知兄弟登高处，遍插茱萸少一人。"
+}

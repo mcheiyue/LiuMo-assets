@@ -1,0 +1,17 @@
+{
+  "title": "登幽州台歌",
+  "author": "陈子昂",
+  "dynasty": "唐",
+  "content": "前不见古人，后不见来者。\n念天地之悠悠，独怆然而涕下。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "登幽州台歌",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"前不见古人，后不见来者。\", \"念天地之悠悠，独怆然而涕下。\"]}]}",
+  "display_content": "前不见古人，后不见来者。\n念天地之悠悠，独怆然而涕下。"
+}

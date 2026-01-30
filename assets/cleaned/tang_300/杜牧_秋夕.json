@@ -1,0 +1,17 @@
+{
+  "title": "秋夕",
+  "author": "杜牧",
+  "dynasty": "唐",
+  "content": "红烛秋光冷画屏，轻罗小扇扑流萤。\n天阶夜色凉如水，坐看牵牛织女星。",
+  "type": "乐府",
+  "tags": [
+    "唐诗三百首",
+    "shi",
+    "乐府"
+  ],
+  "source": "tang_300",
+  "original_title": "秋夕",
+  "layout_strategy": "CENTER_ALIGNED",
+  "content_json": "{\"paragraphs\": [{\"type\": \"main\", \"lines\": [\"红烛秋光冷画屏，轻罗小扇扑流萤。\", \"天阶夜色凉如水，坐看牵牛织女星。\"]}]}",
+  "display_content": "红烛秋光冷画屏，轻罗小扇扑流萤。\n天阶夜色凉如水，坐看牵牛织女星。"
+}
