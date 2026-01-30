@@ -7,11 +7,13 @@ import logging
 import aiohttp
 from typing import List, Dict, Set
 
+import argparse
+
 # Configuration
 API_BASE = "http://127.0.0.1:8045/v1"
-API_KEY = "sk-3da733f9cd824f1b9ad4137cf80cac39"  # Local proxy doesn't verify key, but header required
+API_KEY = "sk-3da733f9cd824f1b9ad4137cf80cac39"  # Key from benchmark script
 MODEL = "gemini-3-flash"
-CONCURRENCY = 15
+CONCURRENCY = 15  # Restored to 15 based on benchmark results (safe limit < 25)
 INPUT_DIRS = ["data/other", "data/modern"]
 OUTPUT_DIR = "data/cleaned"
 PROGRESS_FILE = "data/progress.json"
@@ -27,6 +29,11 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Parse Args
+parser = argparse.ArgumentParser()
+parser.add_argument("--dataset", help="Filter by dataset name (e.g. meng_xue)")
+args = parser.parse_args()
 
 # Ensure directories exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -112,10 +119,15 @@ Content:
             retries = 3
             for attempt in range(retries):
                 try:
-                    async with self.session.post(f"{API_BASE}/chat/completions", json=payload, headers={"Authorization": f"Bearer {API_KEY}"}) as resp:
+                    # Increase timeout to 60s
+                    timeout = aiohttp.ClientTimeout(total=60)
+                    async with self.session.post(f"{API_BASE}/chat/completions", json=payload, headers={"Authorization": f"Bearer {API_KEY}"}, timeout=timeout) as resp:
                         if resp.status != 200:
-                            logger.warning(f"API Error {resp.status} for {item_id}, retrying...")
-                            await asyncio.sleep(5)
+                            # Read response text for detailed error
+                            err_text = await resp.text()
+                            logger.warning(f"API Error {resp.status} for {item_id}: {err_text}")
+                            logger.warning("Cooling down for 30s...")
+                            await asyncio.sleep(30)
                             continue
                         
                         result = await resp.json()
@@ -199,6 +211,11 @@ Content:
                     if not file.endswith('.json'): continue
                     
                     dataset_name = file.replace('.json', '')
+                    
+                    # Filter by dataset arg
+                    if args.dataset and args.dataset != dataset_name:
+                        continue
+                        
                     filepath = os.path.join(root_dir, file)
                     
                     try:

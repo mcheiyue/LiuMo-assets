@@ -1,12 +1,26 @@
 # Python
 __pycache__/
 *.py[cod]
-venv/
-.env
+*$py.class
 
-# Data
-output/
-*.db
-*.sqlite
+# Environment
+.env
+venv/
+.venv/
+
+# Intermediate Data Processed (Ignored to keep repo clean)
+data/curated/
 data/cleaned/
-data/progress.json
+
+# Output artifacts
+output/
+liumo_full.db
+
+# Reports & Logs
+*.log
+data/analysis_report.*
+data/*_missing.txt
+
+# OS specific
+.DS_Store
+Thumbs.db
