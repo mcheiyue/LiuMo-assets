@@ -1,0 +1,50 @@
+name: Build and Release V8 Data
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'assets/final/**'
+      - 'src/builder.py'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Build Full Database
+        run: |
+          mkdir -p output
+          python src/builder.py --type full --output_dir output
+          gzip -c output/full.db > output/liumo_v8_full.db.gz
+          
+      - name: Build Lite Database
+        run: |
+          python src/builder.py --type lite --output_dir output
+          gzip -c output/core.db > output/liumo_v8_lite.db.gz
+          
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
+        
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v8-data-${{ steps.date.outputs.date }}
+          name: V8 Data Update ${{ steps.date.outputs.date }}
+          files: |
+            output/liumo_v8_full.db.gz
+            output/liumo_v8_lite.db.gz
+          draft: false
+          prerelease: false

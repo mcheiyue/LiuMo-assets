@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+venv/
+.venv/
+
+# Build Artifacts
+output/
+dist/
+*.db
+*.db.gz
+liumo_full.db
+
+# Large raw files / Intermediate
+assets/raw/
+assets/cleaned/
+# assets/final/ is committed (source of truth)
+
+# Reports & Logs
+*.log
+data/analysis_report.*
+data/*_missing.txt
+
+# OS specific
+.DS_Store
+Thumbs.db
