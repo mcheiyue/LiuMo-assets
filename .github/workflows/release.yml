@@ -38,11 +38,20 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
         
+      - name: Extract changelog
+        run: |
+          # 提取 CHANGELOG.md 中第一个版本的内容作为 release body
+          touch /tmp/release_body.md
+          if [ -f CHANGELOG.md ]; then
+            awk '/^## / { if (n++) exit; next } n' CHANGELOG.md > /tmp/release_body.md
+          fi
+          
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v8-data-${{ steps.date.outputs.date }}
           name: V8 Data Update ${{ steps.date.outputs.date }}
+          body_path: /tmp/release_body.md
           files: |
             output/liumo_v8_full.db.gz
             output/liumo_v8_lite.db.gz
