@@ -18,6 +18,8 @@ liumo_full.db
 # Large raw files / Intermediate
 assets/raw/
 assets/cleaned/
+assets/final/full/tang_shi.json
+assets/final/full/lite_merged.json
 # assets/final/ is committed (source of truth)
 
 # Reports & Logs
