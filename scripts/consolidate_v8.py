@@ -144,28 +144,54 @@ def generate_search_text(lines: List[str]) -> str:
     # 只保留中文、字母、数字
     return re.sub(r'[^\w]', '', full_text, flags=re.UNICODE)
 
-def generate_tags(entry: dict) -> List[str]:
-    """从type和source生成tags"""
-    tags = []
+def generate_tags(entry: dict, source_filename: str = "") -> List[str]:
+    """从type和source生成tags（与normalize_tags.py的ALLOWED_TAGS规范一致）"""
+    tags = set()
+
+    # 1. 从 type 生成体裁标签（使用标准英文代码映射）
+    type_val = str(entry.get('type', '')).strip().lower()
+    TYPE_TAG_MAP = {
+        'shi': 'shi', 'ci': 'ci', 'qu': 'qu', 'wen': 'wen', 'fu': 'fu',
+        'modern': 'modern', 'prose': 'prose', 'fragment': 'fragment',
+        'yuefu': 'yuefu', '乐府': 'yuefu', 'shijing': 'shijing', 'guwen': 'guwen', 'mengxue': 'mengxue',
+    }
+    if type_val in TYPE_TAG_MAP:
+        tags.add(TYPE_TAG_MAP[type_val])
+
+    # 1.5 从源文件名推断子类型标签（修复：yuefu/shijing 标签缺失的根因）
+    FILE_SUBTYPE_MAP = {
+        'shijing.json': 'shijing',
+        'yuefu.json': 'yuefu',
+        'guwen.json': 'guwen',
+        'gu_wen.json': 'guwen',
+        'mengxue.json': 'mengxue',
+        'meng_xue.json': 'mengxue',
+        'chuci.json': 'fu',
+        'lunyu.json': 'wen',
+        'shiji.json': 'wen',
+    }
+    if source_filename and source_filename in FILE_SUBTYPE_MAP:
+        tags.add(FILE_SUBTYPE_MAP[source_filename])
+
+    # 2. 保留已有的合法英文代码标签
     if 'tags' in entry and isinstance(entry['tags'], list):
-        tags = entry['tags'].copy()
-    
-    # 从 type 生成
-    type_val = entry.get('type', '')
-    if type_val and type_val != 'Unknown':
-        tags.append(type_val)
-    
-    # 从 source 生成
-    source = entry.get('source', '')
+        ALLOWED_TAGS = set(TYPE_TAG_MAP.values()) | {'K12', 'tang_300', 'song_300'}
+        for t in entry['tags']:
+            t_str = str(t).strip()
+            if t_str and t_str in ALLOWED_TAGS:
+                tags.add(t_str)
+
+    # 3. 从 source 生成选集标签
+    source = str(entry.get('source', '')).strip().lower()
     if source == 'k12':
-        tags.append('K12')
+        tags.add('K12')
     elif source == 'tang_300':
-        tags.append('唐诗三百首')
+        tags.add('tang_300')
     elif source == 'song_300':
-        tags.append('宋词三百首')
-    
-    # 移除空值和重复值
-    return list(set([t for t in tags if t]))
+        tags.add('song_300')
+
+    # dynasty 不加入 tags（dynasty 有独立筛选字段）
+    return sorted(tags)
 
 def determine_category(entry: dict) -> Tuple[str, str]:
     """确定文件分类路径 (lite/xxx.json 或 full/xxx.json)"""
@@ -175,9 +201,9 @@ def determine_category(entry: dict) -> Tuple[str, str]:
     # 1. Lite 精选集 (最高优先级)
     if source == 'k12' or 'K12' in tags:
         return 'lite', 'k12.json'
-    if source == 'tang_300' or '唐诗三百首' in tags:
+    if source == 'tang_300' or 'tang_300' in tags:
         return 'lite', 'tang_300.json'
-    if source == 'song_300' or '宋词三百首' in tags:
+    if source == 'song_300' or 'song_300' in tags:
         return 'lite', 'song_300.json'
         
     # 2. Full 全量集 (按朝代+体裁)
@@ -189,7 +215,7 @@ def determine_category(entry: dict) -> Tuple[str, str]:
     if dynasty == '唐':
         filename = 'tang_shi.json'
     elif dynasty == '宋':
-        if '词' in tags or entry['layout_strategy'] == 'FLOW_VARYING':
+        if 'ci' in tags or entry['layout_strategy'] == 'FLOW_VARYING':
             filename = 'song_ci.json'
         else:
             filename = 'song_shi.json'
@@ -297,6 +323,10 @@ def load_raw_layer(dataset: Dict[str, dict]) -> Dict[str, dict]:
                     raw_entry.get('author', ''),
                     raw_entry.get('dynasty', '')
                 )
+
+                # Normalize author: Unknown -> 佚名
+                if author.strip() == "Unknown":
+                    author = "佚名"
                 
                 title = raw_entry.get('title', '').strip()
                 
@@ -311,8 +341,13 @@ def load_raw_layer(dataset: Dict[str, dict]) -> Dict[str, dict]:
 
                 key = f"{title}|{author}|{''.join(content_lines)[:20]}" # key也需要加入指纹防止去重误杀
                 
-                # 2. 去重检查
+                # 2. 去重检查 — 修复：合并标签而非丢弃
                 if key in dataset:
+                    # 合并新条目的标签到已有条目（解决 shijing/pre_qin 重叠时标签丢失问题）
+                    new_tags = generate_tags(raw_entry, file_path.name)
+                    existing_tags = dataset[key].get('tags', [])
+                    merged_tags = sorted(set(existing_tags) | set(new_tags))
+                    dataset[key]['tags'] = merged_tags
                     skipped += 1
                     continue
                 
@@ -339,7 +374,7 @@ def load_raw_layer(dataset: Dict[str, dict]) -> Dict[str, dict]:
                     'layout_strategy': layout_strategy,
                     'content_json': generate_content_json(content_lines),
                     'search_text': generate_search_text(content_lines),
-                    'tags': generate_tags(raw_entry),
+                    'tags': generate_tags(raw_entry, file_path.name),
                     'source': raw_entry.get('source', 'unknown'),
                     '_source': 'raw'
                 }
@@ -400,7 +435,7 @@ def main():
             temp_entry['source'] = '' 
             # 注意：不能清空 tags，因为 Full 归类可能依赖 '词' 等 tag
             # 但要移除 'K12' 等精选集 tag 以免 determine_category 再次返回 lite
-            temp_entry['tags'] = [t for t in entry.get('tags', []) if t not in ['K12', '唐诗三百首', '宋词三百首']]
+            temp_entry['tags'] = [t for t in entry.get('tags', []) if t not in ['K12', 'tang_300', 'song_300']]
             
             # 再次判定
             full_folder, full_filename = determine_category(temp_entry)

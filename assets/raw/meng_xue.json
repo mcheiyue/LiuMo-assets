@@ -78,7 +78,12 @@
       "第五言福，百家姓终。"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "3b504c26-b724-4be8-b812-0466c15c19fd",
@@ -96,7 +101,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "6bea3577-50c5-4196-aa12-1bac8be91fdf",
@@ -110,7 +120,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "08b8ab64-89ad-4402-976b-219870920ef9",
@@ -370,7 +385,12 @@
       "焉哉乎也"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "96cb5f5d-875f-439b-9601-720ed46baeac",
@@ -511,7 +531,12 @@
       "勤有功，戏无益，戒之哉，宜勉力。"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "a50c2898-9174-4319-b99b-cc0feb8b2bfb",
@@ -617,7 +642,12 @@
       "勤有功，戏无益，戒之哉，宜勉力。"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "6371fa5d-4b17-4592-bdb1-4c97e6fae808",
@@ -629,7 +659,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "80beed4b-82d4-4a09-aea8-9c725b030a92",
@@ -646,7 +681,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "67b90881-c621-449d-a47c-2463165fa3a7",
@@ -660,7 +700,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "d6a5049e-1bba-464f-abb1-5b5db7d95921",
@@ -674,7 +719,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "bc2e9139-0bc2-4fa9-b1e3-e4544334d20c",
@@ -686,7 +736,12 @@
       "[object Object]"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   },
   {
     "id": "ff0ab941-7dcf-4ad6-b13d-492a6fef9c76",
@@ -747,6 +802,11 @@
       "为人若此，庶乎近焉。"
     ],
     "type": "prose",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "mengxue",
+      "prose",
+      "wen"
+    ]
   }
 ]

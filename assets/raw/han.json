@@ -23,7 +23,10 @@
       "兼爱尚同，疏者为戚。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "35101cd4-68d5-41a5-9eb9-bf1956d383ca",
@@ -41,7 +44,11 @@
       "山不厌高，海不厌深。周公吐哺，天下归心。(海 一作：水)"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "de23ff5c-f8d0-4501-94eb-4d3cc61befa3",
@@ -71,7 +78,11 @@
       "河阳之会，诈称周王，是其名纷葩。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "432d5749-2b6a-4b79-ab73-d5f41cefd6d9",
@@ -95,7 +106,11 @@
       "恩德广及草木昆虫。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "3bbf0873-b29e-461f-b6e5-a0d18a1d98bf",
@@ -112,7 +127,11 @@
       "幸甚至哉，歌以咏志。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "3edf7ee3-a413-4140-aba1-b569ce532cbf",
@@ -129,7 +148,11 @@
       "幸甚至哉，歌以咏志。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "be9bebb7-98ed-42b0-b968-e19c702e6e1e",
@@ -147,7 +170,11 @@
       "生民百遗一，念之断人肠。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "2be84af6-ebf4-4f60-83d3-5a7cd9f63bc0",
@@ -169,7 +196,10 @@
       "年之暮奈何，时过时来微。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "382929de-bde2-4f8c-8b7f-5e99e012c870",
@@ -191,7 +221,10 @@
       "悲彼东山诗，悠悠使我哀。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "ebf7a91a-d8f0-42a5-81f2-53fa5bd95e4a",
@@ -215,7 +248,10 @@
       "多驾合坐，万岁长，宜子孙。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "786a0928-9ad3-4957-95e3-64ae2c6e44b6",
@@ -246,7 +282,10 @@
       "当如此，道自来。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "fdc2d9bb-b29e-44d6-a7f2-8c500262fb9a",
@@ -263,7 +302,10 @@
       "常愿主人增年，与天相守。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "01e421fe-f81f-4e3d-ad6c-3f3e85ef5684",
@@ -283,7 +325,10 @@
       "狐死归首丘，故乡安可忘！"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "6594920e-f520-43ea-85f7-920b7620e9bc",
@@ -305,7 +350,11 @@
       "从君致独乐，延年寿千秋。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "51ccd452-411f-4661-976f-4c0ada592a0d",
@@ -323,7 +372,11 @@
       "瞻彼洛城郭，微子为哀伤。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "1eaaf546-0977-428f-9732-b3bf78640046",
@@ -339,7 +392,11 @@
       "景未移，行数千，寿如南山不忘愆。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "9f4c040a-1150-4034-830e-418418a6d91f",
@@ -372,7 +429,10 @@
       "歌以言志，去去不可追。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "76ed6229-0164-48a1-b8c4-f3451f98ed8b",
@@ -412,7 +472,10 @@
       "歌以言志，戚戚欲何念！"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "0574f321-d60b-4c5a-900d-2ec520e6b949",
@@ -436,7 +499,10 @@
       "随制饮酒，扬波使官。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "5ebbf81a-613a-4ba6-a6a7-2689b62911ab",
@@ -458,7 +524,10 @@
       "今我将何照于光曜？释衔不如雨。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "a9b3ada0-63b6-4a82-8c16-347b71b2b079",
@@ -478,7 +547,10 @@
       "冲静得自然，荣华何足为！"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "a20e5c6d-bd87-4999-87d4-bf481db8c19f",
@@ -491,7 +563,11 @@
       "经过至我碣石，心惆怅我东海。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "78d7e058-0b8f-46f4-b4ad-8216684a2d4f",
@@ -508,7 +584,11 @@
       "幸甚至哉！歌以咏志。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "13f4842f-984e-4499-a592-b5a774178019",
@@ -525,7 +605,11 @@
       "幸甚至哉！歌以咏志。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi",
+      "yuefu"
+    ]
   },
   {
     "id": "5aaba434-07f8-42ee-846f-4cba3bf91f4f",
@@ -537,7 +621,10 @@
       "友来从我贷，不知所以应。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
   },
   {
     "id": "44253695-b8a9-4222-a673-8f5e1574ebcd",
@@ -550,6 +637,90 @@
       "郭景图命尽于园桑。"
     ],
     "type": "shi",
-    "source": "chinese-poetry"
+    "source": "chinese-poetry",
+    "tags": [
+      "shi"
+    ]
+  },
+  {
+    "title": "归园田居",
+    "author": "陶渊明",
+    "dynasty": "魏晋",
+    "content": [
+      "种豆南山下，草盛豆苗稀。",
+      "晨兴理荒秽，带月荷锄归。",
+      "道狭草木长，夕露沾我衣。",
+      "衣沾不足惜，但使愿无违。"
+    ],
+    "type": "shi",
+    "source": "k12",
+    "tags": [
+      "K12",
+      "shi"
+    ]
+  },
+  {
+    "title": "短歌行",
+    "author": "曹操",
+    "dynasty": "魏晋",
+    "content": [
+      "对酒当歌，人生几何！譬如朝露，去日苦多。",
+      "慨当以慷，忧思难忘。何以解忧？唯有杜康。",
+      "青青子衿，悠悠我心。但为君故，沉吟至今。",
+      "呦呦鹿鸣，食野之苹。我有嘉宾，鼓瑟吹笙。",
+      "明明如月，何时可掇？忧从中来，不可断绝。(明明 一作：佼佼)",
+      "越陌度阡，枉用相存。契阔谈䜩，心念旧恩。(谈䜩 一作：谈宴)",
+      "月明星稀，乌鹊南飞。绕树三匝，何枝可依？",
+      "山不厌高，海不厌深。周公吐哺，天下归心。(海 一作：水)"
+    ],
+    "type": "shi",
+    "source": "k12",
+    "tags": [
+      "K12",
+      "shi",
+      "yuefu"
+    ]
+  },
+  {
+    "title": "江南",
+    "author": "汉乐府",
+    "dynasty": "汉",
+    "content": [
+      "梅花好，满树锦江边。",
+      "不似武陵曾见日，清香冷艳扶尊前。",
+      "销得醉留连。",
+      "凭造化，分付与花权。",
+      "已共雪光争腊早，且将春信为君传。",
+      "桃李莫夸先。"
+    ],
+    "type": "ci",
+    "source": "k12",
+    "tags": [
+      "K12",
+      "ci",
+      "shi",
+      "yuefu"
+    ]
+  },
+  {
+    "title": "观沧海",
+    "author": "曹操",
+    "dynasty": "魏晋",
+    "content": [
+      "东临碣石，以观沧海。",
+      "水何澹澹，山岛竦峙。",
+      "树木丛生，百草丰茂。",
+      "秋风萧瑟，洪波涌起。",
+      "日月之行，若出其中；",
+      "星汉灿烂，若出其里。",
+      "幸甚至哉，歌以咏志。"
+    ],
+    "type": "shi",
+    "source": "k12",
+    "tags": [
+      "K12",
+      "shi",
+      "yuefu"
+    ]
   }
 ]

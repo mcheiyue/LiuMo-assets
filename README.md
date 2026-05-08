@@ -11,6 +11,8 @@
   - 采用新版 JSON Schema，字段更精简，元数据更丰富。
 - **`src/`**: 构建系统的核心代码。
   - `builder.py`: 数据库构建器，负责验证、清洗并打包数据。
+  - `consolidate_v8.py`: 数据整合脚本，负责从多源 raw JSON 合并、去重、生成 tags。
+  - `tag_yuefu.py`: 乐府标签匹配脚本，根据标题列表为源数据追加 `yuefu` 标签。
 - **`fonts/`**: 字体资源文件。
 
 ## 🚀 自动构建流程 (V8.0 Pipeline)
@@ -18,7 +20,7 @@
 本仓库配置了 GitHub Actions (CI/CD)。当 `main` 分支有更新时：
 
 1.  **构建**: 运行 `src/builder.py`，执行严谨的数据校验。
-2.  **打包**: 生成适配 V8.0 客户端的 `liumo_assets_v8.db.gz`。
+2.  **打包**: 生成适配 V8.0 客户端的 `liumo_v8_full.db.gz` 和 `liumo_v8_lite.db.gz`。
 3.  **发布**: 自动发布 Release，供客户端增量更新。
 
 **主应用 (LiuMo)** 仅支持 V1.7.0+ 版本使用本仓库构建的 V8.0 数据包。
@@ -33,6 +35,12 @@
 
 ```bash
 # 需要 Python 3.10+
-python src/builder.py
+
+# 1. 整合数据（可选，仅在 raw 数据变更时需要）
+python scripts/consolidate_v8.py
+
+# 2. 构建数据库
+python src/builder.py --type full
+python src/builder.py --type lite
 ```
-构建产物将输出至 `dist/` 目录。
+构建产物将输出至 `output/` 目录。

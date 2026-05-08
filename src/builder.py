@@ -10,16 +10,25 @@ import hashlib
 DB_PATH = "output/liumo_v8.db"
 DEFAULT_INPUT_DIR = "assets/final"
 
+# === 合法标签集合（与 normalize_tags.py ALLOWED_TAGS 保持一致）===
+VALID_TAGS = {
+    # 体裁标签
+    'shi', 'ci', 'qu', 'wen', 'fu', 'modern',
+    'prose', 'fragment', 'yuefu', 'shijing', 'guwen', 'mengxue',
+    # 选集标签
+    'K12', 'tang_300', 'song_300',
+}
+
 def build_search_text(title, author, content):
     """
-    Build search text optimized for unicode61 tokenizer.
-    Strategy: Add spaces between EVERY character (Chinese friendly).
-    "床前明月光" -> "床 前 明 月 光"
+    构建搜索文本（保留原始连续文本，不插入逐字空格）。
+    修复：移除逐字空格插入，避免破坏中文词语边界，使 FTS5 unicode61 tokenizer
+    能按字符边界自然分词，配合 MATCH 查询使用 AND/NEAR 运算符。
     """
     full_text = f"{title} {author} {content}"
+    # 清理：只保留中文、字母、数字，去除标点和特殊字符
     cleaned = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9]', '', full_text)
-    spaced_text = " ".join(list(cleaned))
-    return spaced_text
+    return cleaned
 
 def create_connection(db_file):
     """创建数据库连接"""
@@ -94,7 +103,26 @@ def import_file(conn, file_path):
     batch_fts = []
     
     for item in data:
-        tags_str = json.dumps(item.get('tags', []), ensure_ascii=False)
+        # === Tags schema 校验 ===
+        raw_tags = item.get('tags', [])
+        if isinstance(raw_tags, list):
+            valid_tags = [t for t in raw_tags if t in VALID_TAGS]
+            invalid_tags = [t for t in raw_tags if t not in VALID_TAGS]
+            if invalid_tags:
+                try:
+                    print(f"  WARNING: Filtered invalid tags {invalid_tags} for '{item.get('title', '?')}'")
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    # Windows GBK console encoding cannot handle some characters (e.g., \u30fb)
+                    try:
+                        safe_title = repr(item.get('title', '?'))[:40]
+                        print(f"  WARNING: Filtered {len(invalid_tags)} invalid tag(s) for title={safe_title}")
+                    except Exception:
+                        print(f"  WARNING: Filtered {len(invalid_tags)} invalid tag(s) (title unprintable)")
+            item['tags'] = valid_tags
+        else:
+            item['tags'] = []
+
+        tags_str = json.dumps(item['tags'], ensure_ascii=False)
         content_json_val = item.get('content_json', '{}')
         if not isinstance(content_json_val, str):
             content_json_val = json.dumps(content_json_val, ensure_ascii=False)
